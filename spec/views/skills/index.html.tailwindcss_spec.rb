@@ -4,14 +4,16 @@ RSpec.describe "skills/index", type: :view do
   before(:each) do
     assign(:skills, [
       Skill.create!(
-        skill_name: "Skill Name",
+        name: "Skill Name",
         level: "Level",
-        years_of_experience: 2
+        years_of_experience: 2,
+        description: "description"
       ),
       Skill.create!(
-        skill_name: "Skill Name",
+        name: "Skill Name",
         level: "Level",
-        years_of_experience: 2
+        years_of_experience: 2,
+        description: "description"
       )
     ])
   end
@@ -22,5 +24,6 @@ RSpec.describe "skills/index", type: :view do
     assert_select cell_selector, text: Regexp.new("Skill Name".to_s), count: 2
     assert_select cell_selector, text: Regexp.new("Level".to_s), count: 2
     assert_select cell_selector, text: Regexp.new(2.to_s), count: 2
+    assert_select cell_selector, text: Regexp.new("description".to_s), count: 2
   end
 end

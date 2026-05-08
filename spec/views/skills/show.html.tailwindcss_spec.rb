@@ -3,9 +3,10 @@ require 'rails_helper'
 RSpec.describe "skills/show", type: :view do
   before(:each) do
     assign(:skill, Skill.create!(
-      skill_name: "Skill Name",
+      name: "Skill Name",
       level: "Level",
-      years_of_experience: 2
+      years_of_experience: 2,
+      description: "description"
     ))
   end
 
@@ -14,5 +15,6 @@ RSpec.describe "skills/show", type: :view do
     expect(rendered).to match(/Skill Name/)
     expect(rendered).to match(/Level/)
     expect(rendered).to match(/2/)
+    expect(rendered).to match(/description/)
   end
 end
