@@ -13,17 +13,16 @@
 
   <div class="my-5">
     <%= form.label :name %>
-    <%= form.text_field :name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": skill.errors[:name].none?, "border-red-400 focus:outline-red-600": skill.errors[:name].any?}] %>
+    <%= form.text_field :name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", 
+                                       {"border-gray-400 focus:outline-blue-600": skill.errors[:name].none?, 
+                                        "border-red-400 focus:outline-red-600": skill.errors[:name].any?}] %>
   </div>
 
   <div class="my-5">
-    <%= form.label :level %>
-    <%= form.text_field :level, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": skill.errors[:level].none?, "border-red-400 focus:outline-red-600": skill.errors[:level].any?}] %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :years_of_experience %>
-    <%= form.number_field :years_of_experience, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": skill.errors[:years_of_experience].none?, "border-red-400 focus:outline-red-600": skill.errors[:years_of_experience].any?}] %>
+    <%= form.label :description, class: "block" %>
+    <%= form.text_area :description, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full",
+                                            {"border-gray-400 focus:outline-blue-600": skill.errors[:description].none?,
+                                             "border-red-400 focus:outline-red-600": skill.errors[:description].any?}] %>
   </div>
 
   <div class="inline">

@@ -65,6 +65,6 @@ class SkillsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def skill_params
-      params.expect(skill: [ :name, :level, :years_of_experience ])
+      params.expect(skill: [ :name, :description ])
     end
 end

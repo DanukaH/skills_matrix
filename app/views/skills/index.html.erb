@@ -15,18 +15,16 @@
       <thead class="bg-gray-50">
         <tr class="text-left">
           <th class="py-3.5 px-4">Skill</th>
-          <th class="py-3.5 px-4">Level</th>
-          <th class="py-3.5 px-4">Years of experience</th>
+          <th class="py-3.5 px-4">Description</th>
           <th class="py-3.5 px-4">Actions</th>
         </tr>
       </thead>
-      <tbody class="bg-white divide-y divide-gray-200">
-        <% if @skills.any? %>
-          <% @skills.each do |skill| %>
+      <% if @skills.any? %>
+        <% @skills.each do |skill| %>
+          <tbody class="bg-white divide-y divide-gray-200">
             <tr class="text-left hover:bg-gray-50 cursor-pointer">
               <td class="py-4 px-4"><%= skill.name %></td>
-              <td class="py-4 px-4"><%= skill.level %></td>
-              <td class="py-4 px-4"><%= skill.years_of_experience %></td>
+              <td class="py-4 px-4"><%= skill.description %></td>
               <td class="py-4 px-4">
                 <div class="w-full sm:w-auto flex flex-col sm:flex-row space-x-2 space-y-2">
                   <%= link_to "Show", skill, class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
@@ -35,11 +33,12 @@
                 </div>
               </td>
             </tr>
-          <% end %>
-        <% else %>
-          <p class="text-center my-10">No skills found.</p>
+          </tbody>
         <% end %>
-      </tbody>
+      <% else %>
     </table>
+      <p class="text-center my-10">No skills found. Please start adding skills.</p>
+    <% end %>
+
   </div>
 </div>
